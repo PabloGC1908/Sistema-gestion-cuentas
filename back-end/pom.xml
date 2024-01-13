@@ -7,33 +7,61 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.2.0</version>
+    <version>3.2.1</version>
   </parent>
 
-  <groupId>com.mycompany.app</groupId>
+  <groupId>com.pgc.app</groupId>
   <artifactId>back-end</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <name>back-end</name>
+  <modules>
+    <module>customer</module>
+      <module>account</module>
+  </modules>
   <!--Le decimos a este proyecto no se puede levantar sino actua como contenedor-->
   <packaging>pom</packaging>
-
-  <modules>
-    <module>account-service</module>
-    <module>customer-service</module>
-  </modules>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
+    <spring.boot.maven.plugin.version>3.2.1</spring.boot.maven.plugin.version>
+    <spring.boot.dependencies.version>3.2.1</spring.boot.dependencies.version>
   </properties>
 
-  <dependencies>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring.boot.dependencies.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
+  <dependencies>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+    </dependency>
   </dependencies>
 
   <build>
-
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+          <version>${spring.boot.maven.plugin.version}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
 </project>
