@@ -14,7 +14,7 @@ public record CustomerRequest(
         @Pattern(regexp = "\\d")
         String phone,
         @NotNull
-        PaymentMethod paymentMethod,
+        Integer paymentMethod,
         @NotNull
         @NotBlank
         Integer userId,

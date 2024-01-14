@@ -1,5 +1,6 @@
 package com.pgc.app.controller;
 
+import com.pgc.app.exception.classes.ResourceNotFoundException;
 import com.pgc.app.model.Country;
 import com.pgc.app.service.CountryService;
 import lombok.extern.slf4j.Slf4j;
@@ -29,13 +30,18 @@ public class CountryController {
     }
 
     @GetMapping("/{code}")
-    public ResponseEntity<Country> getCountry(@PathVariable String code) {
-        Country country = countryService.getCountry(code);
+    public ResponseEntity<Country> getCountry(@PathVariable String code) throws ResourceNotFoundException {
+        try {
+            Country country = countryService.getCountry(code);
 
-        if (country == null)
-            return ResponseEntity.notFound().build();
+            if (country == null)
+                return ResponseEntity.notFound().build();
 
-        return ResponseEntity.ok(country);
+            return ResponseEntity.ok(country);
+
+        } catch (RuntimeException e) {
+            return ResponseEntity.internalServerError().build();
+        }
     }
 
     @PostMapping
