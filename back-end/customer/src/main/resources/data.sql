@@ -21,7 +21,12 @@ INSERT INTO country (country_code, country_name, iso_code) VALUES ('504', 'Hondu
 INSERT INTO country (country_code, country_name, iso_code) VALUES ('502', 'Guatemala', 'GT');
 INSERT INTO country (country_code, country_name, iso_code) VALUES ('503', 'El Salvador', 'SV');
 INSERT INTO country (country_code, country_name, iso_code) VALUES ('505', 'Nicaragua', 'NI');
-
+INSERT INTO country (country_code, country_name, iso_code) VALUES ('19', 'Estados Unidos', 'US');
+INSERT INTO country (country_code, country_name, iso_code) VALUES ('44', 'Reino Unido', 'GB');
+INSERT INTO country (country_code, country_name, iso_code) VALUES ('353', 'Irlanda', 'IE');
+INSERT INTO country (country_code, country_name, iso_code) VALUES ('212', 'Marruecos', 'MA');
+INSERT INTO country (country_code, country_name, iso_code) VALUES ('33', 'Francia', 'FR');
+INSERT INTO country (country_code, country_name, iso_code) VALUES ('63', 'Filipinas', 'PH');
 
 
 
