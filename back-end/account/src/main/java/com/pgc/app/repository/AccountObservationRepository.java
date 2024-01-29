@@ -1,4 +1,7 @@
 package com.pgc.app.repository;
 
-public interface AccountObservationRepository {
+import com.pgc.app.model.AccountObservation;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AccountObservationRepository extends JpaRepository<AccountObservation, Byte> {
 }
