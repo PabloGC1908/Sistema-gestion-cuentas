@@ -17,7 +17,7 @@ import java.util.List;
 public class AccountInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "id_category")
@@ -29,7 +29,7 @@ public class AccountInfo {
 
     @ManyToOne
     @JoinColumn(name = "id_credentials")
-    private Credentials credentials;
+    private Credential credential;
 
     @OneToMany(mappedBy = "accountInfo")
     private List<Account> accounts;
