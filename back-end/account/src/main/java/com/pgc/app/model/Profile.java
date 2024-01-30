@@ -1,5 +1,6 @@
 package com.pgc.app.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,6 +23,7 @@ public class Profile {
     @Column(length = 20)
     private String profile;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "profile")
     private List<AccountInfo> accountInfos;
 }
